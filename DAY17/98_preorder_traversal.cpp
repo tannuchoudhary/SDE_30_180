@@ -35,3 +35,43 @@ int main(){
     return 0;
     
 }
+//ITERATIVE
+#include<bits/stdc++.h>
+using namespace std;
+
+class node{
+   public:
+   int data;
+   node* left;
+   node* right;
+   
+   node(int data){
+       this->data = data;
+       right = left = NULL;
+   }
+};
+
+void preorder(node* root){
+    stack<node*> s;
+    s.push(root);
+        while(!s.empty()){
+        node* current = s.top();
+        cout<<current->data<<" ";
+        s.pop();
+        if(current->right)
+        s.push(current->right);
+        if(current->left)
+        s.push(current->left);
+    }
+}
+
+int main(){
+    node* root = new node(1);
+    root->left = new node(2);
+    root->right = new node(3);
+    root->left->left  = new node(4); 
+    root->left->right = new node(5); 
+    
+    preorder(root);
+    return 0;
+}
