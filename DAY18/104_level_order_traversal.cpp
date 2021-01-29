@@ -1,4 +1,4 @@
-//O(N^2) APPROACH 
+//T.C- O(N^2), S.C-O(N) APPROACH 
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -43,6 +43,51 @@ void levelOrder(node* root){
     
     for(int i=1; i<=h; i++){
         print_this_level(root, i);
+    }
+}
+
+int main(){
+  node* root = new node(1);
+  root->left = new node(2);
+  root->right = new node(3);
+  root->left->left = new node(4);
+  root->left->right = new node(5);
+  
+  levelOrder(root);
+}
+
+////T.C- O(N2), S.C-O(N) APPROACH 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class node{
+    public:
+    int data;
+    node* right;
+    node* left;
+    
+    node(int data){
+        this->data = data;
+        right = left = NULL;
+    }
+};
+
+
+void levelOrder(node* root){
+    if(root == NULL) return;
+    
+    queue<node *>q;
+    q.push(root);
+    
+    while(!q.empty()){
+        node* current = q.front();
+        q.pop();
+        cout<<current->data<<" ";
+        
+        if(current->left != NULL) q.push(current->left);
+        if(current->right != NULL) q.push(current->right);
+        
     }
 }
 
