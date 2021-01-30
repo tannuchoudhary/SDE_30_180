@@ -53,3 +53,43 @@ int main(){
 
 //Approach-02
 
+#include<bits/stdc++.h>
+using namespace std;
+
+class node{
+    public:
+    int data;
+    node* right;
+    node* left;
+    
+    node(int data){
+        this->data = data;
+        right = left = NULL;
+    }
+};
+
+
+int find_LCA(node* root, int n1, int n2){
+   if(root==NULL) return 0;
+   if(root->data == n1 || root->data == n2) return (root->data);
+   
+   int left_lca = find_LCA(root->left, n1, n2);
+   int rightlca = find_LCA(root->right, n1, n2);
+   
+   if(left_lca&&rightlca) return(root->data);
+   
+   return((left_lca!=0) ? left_lca : rightlca);
+    
+}
+
+
+int main(){
+  node* root = new node(1);
+  root->left = new node(2);
+  root->right = new node(3);
+  root->left->left = new node(4);
+  root->left->right = new node(5);
+  int height = 0;
+  cout<<find_LCA(root, 4, 5);
+  return 0;
+}
