@@ -1,4 +1,7 @@
 
+//TC = O(n^2)
+//sc = O(1)
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -52,3 +55,5 @@ int main(){
     print_inorder(root);
     
 }
+
+
