@@ -1,9 +1,7 @@
-/*
-Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+# Two Sum Problem
 
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
-
-You can return the answer in any order.
+## Question:
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice.You can return the answer in any order.
 
  
 
@@ -32,7 +30,12 @@ Constraints:
     -109 <= target <= 109
     Only one valid answer exists.
 
-*/
+## Approach: 
+![Screenshot from 2021-08-21 08-30-53](https://user-images.githubusercontent.com/42698268/130308476-188abb9e-32a5-41df-880c-2996b8fb81a9.png)
+
+
+```cpp
+
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -50,3 +53,4 @@ public:
         
     }
 };
+```
