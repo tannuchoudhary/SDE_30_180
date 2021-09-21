@@ -56,7 +56,7 @@ int main(){
   levelOrder(root);
 }
 
-////T.C- O(N2), S.C-O(N) APPROACH 
+////T.C- O(N), S.C-O(N) APPROACH 
 
 #include<bits/stdc++.h>
 using namespace std;
