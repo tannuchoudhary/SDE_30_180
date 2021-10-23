@@ -3,6 +3,8 @@
 ## Brute Approach
 ``` Using extra space ```
 
+
+
 ## Optimal Approach
 ```Without using any extra space ```
 
